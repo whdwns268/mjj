@@ -123,6 +123,9 @@
 .directlink > div{
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.20);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .directlink > div:nth-of-type(1){
@@ -130,8 +133,39 @@
     height: 35px;
 }
 
+.directlink > div:nth-of-type(2) > span {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #FFF;
+    background-image: url('../../img/aws.png');
+    background-repeat: no-repeat; /* 이미지 반복 제거 */
+    background-size: 30px;
+    background-position: center; /* 이미지 가운데 정렬 */
+    margin-left:10px;
+}
+
 .directlink > div:nth-of-type(2){
     margin-left:10px;
     width: 120px;
     height: 35px;
+}
+
+.directlink > div:nth-of-type(1) > span{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-image: url('../../img/GitHub-Mark.svg');
+    background-repeat: no-repeat; /* 이미지 반복 제거 */
+    background-size: 20px;
+    background-position: center; /* 이미지 가운데 정렬 */
+    margin-left:10px;
+}
+
+.directlink > div > a{
+    margin-left:8px;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 700;
 }

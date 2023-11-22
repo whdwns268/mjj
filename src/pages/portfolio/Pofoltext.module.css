@@ -45,10 +45,12 @@
 
 .pofolul > li:nth-of-type(4){
     height: 40px;
+    
 }
 
 .pofolul > li:nth-of-type(4) > img{
     width: 40px;
     height: 40px;
+    border-radius: 40px;
     margin-left:15px;
 }

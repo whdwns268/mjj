@@ -1,5 +1,7 @@
 import moduleStyle from './Home.module.css';
 import { ReactComponent as Saly} from '../../ico/Saly13.svg'
+import { Link } from "react-router-dom";
+
 
 function Pagehome(){
 
@@ -37,7 +39,7 @@ return(
     </div>
 
     <div>
-        <button type='button'> More Portfolio →</button>
+        <button type='button'><Link to='/portfolio'>More Portfolio →</Link> </button>
     </div>
     <div className={moduleStyle.slaycssContainer}>
         <div><Saly className={moduleStyle.slaycss}/></div>

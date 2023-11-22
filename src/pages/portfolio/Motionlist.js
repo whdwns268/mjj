@@ -6,6 +6,7 @@ import Img2 from '../../img/portfolio_img_2.png'
 import Img3 from '../../img/portfolio_img_3.png'
 import Img4 from '../../img/portfolio_img_4.png'
 import Img5 from '../../img/portfolio_img_5.png'
+import portfoliojson from './portfoliojson'
 
 
 function Motionlist({ pofolnum, updatePofolnum }) {
@@ -115,8 +116,12 @@ function Motionlist({ pofolnum, updatePofolnum }) {
     return (
         <div style={{ position: "relative" }}>
             <span id="directlink" className={moduleStyle.directlink}>
-                <div>깃허브</div>
-                <div>배포사이트</div>
+                <div>
+                    <span></span><a>깃허브 >></a>
+                </div>
+                <div>
+                    <span></span><a>배포링크 >></a>
+                </div>
             </span>
 
             <motion.ul
