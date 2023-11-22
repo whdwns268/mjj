@@ -108,6 +108,10 @@ function Motionlist({ pofolnum, updatePofolnum }) {
             <motion.li variants={list} >
                 <div><img src={Img1} alt="img1"></img></div>
                 <span id="clickico" className={moduleStyle.clickico}></span>{/*버튼이미지 */}
+                <span>
+                    <div>깃허브</div>
+                    <div>배포사이트</div>
+                </span>
             </motion.li>
 
             <motion.li variants={list}>
