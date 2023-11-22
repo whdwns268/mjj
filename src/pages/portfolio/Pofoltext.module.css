@@ -1,0 +1,54 @@
+.pofol{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out, width 0.7s ease-in-out, height 0.7s ease-in-out,  left 0.5s ease-in-out;
+}
+
+.pofolul{
+    width: 100%;
+    height: 375px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center
+}
+
+.pofolul > li{
+    width: 90%;
+    text-align: left;
+}
+
+.pofolul > li:nth-of-type(1){
+    height: 45px;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.pofolul > li:nth-of-type(2){
+    height: 30px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    color: #979797;
+}
+.pofolul > li:nth-of-type(3){
+    height: 260px;
+    font-size: 14px;
+    color: #979797;
+}
+
+.pofolul > li:nth-of-type(4){
+    height: 40px;
+}
+
+.pofolul > li:nth-of-type(4) > img{
+    width: 40px;
+    height: 40px;
+    margin-left:15px;
+}
