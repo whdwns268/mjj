@@ -16,12 +16,20 @@ function Motionlist({ pofolnum, updatePofolnum }) {
         ulElement.current = document.getElementById("motionul");
     }, []);
 
+    useEffect(() => {
+        setTimeout(() => {
+            const directlinkElement = document.getElementById("directlink");
+            directlinkElement.style.opacity = 1;
+        }, 1000);
+    }, []);
+
     function motionEnter() {
         const ulElementCurrent = ulElement.current;
         const liElements = ulElementCurrent.getElementsByTagName("li");
         liElements[0].style.width = "660px";
         liElements[0].style.height = "385px";
         clickicoEnter();
+        directlinkEnter()
     }
 
     function motionLeave() {
@@ -34,7 +42,8 @@ function Motionlist({ pofolnum, updatePofolnum }) {
 
 
     function handleClick() {
-        clickicoLeave() 
+        clickicoLeave()
+        directlinkLeave()
         const ulElementCurrent = ulElement.current;
         const liElements = ulElementCurrent.getElementsByTagName("li");
         liElements[0].style.width = "";
@@ -49,6 +58,7 @@ function Motionlist({ pofolnum, updatePofolnum }) {
             liElements[0].style.width = "660px";
             liElements[0].style.height = "385px";
             clickicoEnter()
+            directlinkEnter()
             updatePofolnum(pofolnum => pofolnum === 5 ? 1 : pofolnum + 1); // 상태 업데이트
         }, 300);
     }
@@ -65,6 +75,16 @@ function Motionlist({ pofolnum, updatePofolnum }) {
         clickimgElement.style.opacity = 0;
         clickimgElement.style.width = "";
         clickimgElement.style.height = "";
+    }
+
+    function directlinkEnter() {
+        const directlinkElement = document.getElementById("directlink");
+        directlinkElement.style.opacity = 1;
+    }
+
+    function directlinkLeave() {
+        const directlinkElement = document.getElementById("directlink");
+        directlinkElement.style.opacity = 0;
     }
 
     function handleClick2() {
@@ -93,48 +113,50 @@ function Motionlist({ pofolnum, updatePofolnum }) {
 
 
     return (
-        <motion.ul
-            id="motionul"
-            ref={ulElement}
-            className={moduleStyle.motionul}
-            variants={list}
-            initial="hidden"
-            animate="visible"
-            onClick={handleClick}
-            onMouseEnter={motionEnter}
-            onMouseLeave={motionLeave}
-        >
+        <div style={{ position: "relative" }}>
+            <span id="directlink" className={moduleStyle.directlink}>
+                <div>깃허브</div>
+                <div>배포사이트</div>
+            </span>
 
-            <motion.li variants={list} >
-                <div><img src={Img1} alt="img1"></img></div>
-                <span id="clickico" className={moduleStyle.clickico}></span>{/*버튼이미지 */}
-                <span>
-                    <div>깃허브</div>
-                    <div>배포사이트</div>
-                </span>
-            </motion.li>
+            <motion.ul
+                id="motionul"
+                ref={ulElement}
+                className={moduleStyle.motionul}
+                variants={list}
+                initial="hidden"
+                animate="visible"
+                onClick={handleClick}
+                onMouseEnter={motionEnter}
+                onMouseLeave={motionLeave}
+            >
+                <motion.li variants={list} >
+                    <div><img src={Img1} alt="img1"></img></div>
+                    <span id="clickico" className={moduleStyle.clickico}></span>{/*버튼이미지 */}
+                </motion.li>
 
-            <motion.li variants={list}>
-                <div><img src={Img2} alt="img2"></img></div>
-                <span id="clickico" className={moduleStyle.clickico}></span>{/*버튼이미지 */}
-            </motion.li>
+                <motion.li variants={list}>
+                    <div><img src={Img2} alt="img2"></img></div>
+                    <span id="clickico" className={moduleStyle.clickico}></span>{/*버튼이미지 */}
+                </motion.li>
 
-            <motion.li variants={list}>
-                <div><img src={Img3} alt="img3"></img></div>
-                <span id="clickico" className={moduleStyle.clickico}></span>{/*버튼이미지 */}
-            </motion.li>
+                <motion.li variants={list}>
+                    <div><img src={Img3} alt="img3"></img></div>
+                    <span id="clickico" className={moduleStyle.clickico}></span>{/*버튼이미지 */}
+                </motion.li>
 
-            <motion.li variants={list}>
-                <div><img src={Img4} alt="img4"></img></div>
-                <span id="clickico" className={moduleStyle.clickico}></span>{/*버튼이미지 */}
-            </motion.li>
+                <motion.li variants={list}>
+                    <div><img src={Img4} alt="img4"></img></div>
+                    <span id="clickico" className={moduleStyle.clickico}></span>{/*버튼이미지 */}
+                </motion.li>
 
-            <motion.li variants={list}>
-                <div><img src={Img5} alt="img5"></img></div>
-                <span id="clickico" className={moduleStyle.clickico}></span>{/*버튼이미지 */}
-            </motion.li>
+                <motion.li variants={list}>
+                    <div><img src={Img5} alt="img5"></img></div>
+                    <span id="clickico" className={moduleStyle.clickico}></span>{/*버튼이미지 */}
+                </motion.li>
 
-        </motion.ul>
+            </motion.ul>
+        </div>
     );
 }
 
