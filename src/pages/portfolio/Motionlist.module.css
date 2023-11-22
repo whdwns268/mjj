@@ -105,3 +105,33 @@
     width: 100%;
     overflow: hidden;
 }
+
+.directlink{
+    z-index: 10;
+    width: auto;
+    height: 35px;
+    left: 106px;    
+    top: 0%;
+    margin-top: -45px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.directlink > div{
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.20);
+}
+
+.directlink > div:nth-of-type(1){
+    width: 105px;
+    height: 35px;
+}
+
+.directlink > div:nth-of-type(2){
+    margin-left:10px;
+    width: 120px;
+    height: 35px;
+}
