@@ -1,0 +1,11 @@
+Model Information:
+* title:	Shiba Dog
+* source:	https://sketchfab.com/3d-models/shiba-dog-72482884a6df4a5b84377ea08625c361
+* author:	ahmedhafiene98 (https://sketchfab.com/ahmedhafiene98)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Shiba Dog" (https://sketchfab.com/3d-models/shiba-dog-72482884a6df4a5b84377ea08625c361) by ahmedhafiene98 (https://sketchfab.com/ahmedhafiene98) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

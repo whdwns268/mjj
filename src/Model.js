@@ -64,7 +64,7 @@ function Model() {
             });
 
             document.querySelector('#canvas').addEventListener('mouseout', () => {
-                document.querySelector('#textindex').innerHTML = '장난이예요~';
+                document.querySelector('#textindex').innerHTML = 'ㅋㅋㅋ';
                 stopCameraAnimation();
             });
 

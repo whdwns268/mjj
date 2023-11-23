@@ -1,0 +1,209 @@
+.contact {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact_divbox {
+    width: 790px;
+    height: 225px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.30);
+    display: flex;
+    position: relative;
+    top:-70px;
+}
+
+.contact_divbox>div {
+    opacity: 0;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+}
+
+.contact_divbox>div:nth-of-type(1) {
+    color: #FD853A;
+    font-family: Poppins;
+    font-size: 42px;
+    font-weight: 900;
+    top: -50px;
+    left:-50px;
+}
+
+.contact_divbox>div:nth-of-type(2) {
+    width: 785px;
+    color: rgba(171, 146, 186, 0.50);
+    font-family: Poppins;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    bottom: -110px;
+    left: 180px;
+}
+
+.contact_divbox>span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+
+.contact_divbox>span:nth-of-type(1) {
+    width: 350px;
+}
+
+.contact_mailul {
+    width: 305px;
+    height: 185px;
+    border-radius: 16px;
+    background: #DADADA;
+    box-sizing: border-box;
+    padding: 11px;
+}
+
+.contact_mailul>li {
+    padding: 8px 12px 8px 12px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    background: #FFF;
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+.contact_mailul>li:nth-of-type(1) {
+    width: 282px;
+    height: 114px;
+}
+
+.contact_mailul>li:nth-of-type(1)>textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.contact_mailul>li:nth-of-type(2) {
+    margin-top: 11px;
+    width: 282px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.contact_mailul>li:nth-of-type(2)>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-right: 30px;
+}
+
+.contact_mailul>li:nth-of-type(2)>div>input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    z-index: 1;
+}
+
+.contact_mailul>li:nth-of-type(2)>div>div {
+    width: 37px;
+    height: 37px;
+    background-color: #FD853A;
+    background-image: url('/public/img/filled.svg');
+    background-repeat: no-repeat;
+    /* 이미지 반복 제거 */
+    background-size: 24px;
+    /* 이미지 크기 조정 */
+    background-position: center;
+    /* 이미지 가운데 정렬 */
+    position: relative;
+    right: -43px;
+}
+
+.contact_divbox>span:nth-of-type(2) {
+    width: 440px;
+
+}
+
+.contact_myinfoul {
+    width: 400px;
+    height: 185px;
+}
+
+.contact_myinfoul>li {
+    height: 25px;
+    margin-bottom: 28px;
+    display: flex;
+}
+
+.contact_myinfoul>li:last-child {
+    margin-bottom: 0px;
+}
+
+.contact_myinfoul>li>div {
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    /* 이미지 반복 제거 */
+    background-size: 24px;
+    /* 이미지 크기 조정 */
+    background-position: center;
+    /* 이미지 가운데 정렬 */
+}
+
+.contact_myinfoul>li:nth-of-type(1)>div {
+    background-image: url('/public/img/phone.svg');
+}
+
+.contact_myinfoul>li:nth-of-type(2)>div {
+    background-image: url('/public/img/mail.png');
+}
+
+.contact_myinfoul>li:nth-of-type(3)>div {
+    background-image: url('/public/img/git.svg');
+}
+
+.contact_myinfoul>li:nth-of-type(4)>div {
+    background-image: url('/public/img/tistory.svg');
+}
+
+.contact_myinfoul>li:nth-of-type(3) , .contact_myinfoul>li:nth-of-type(4){
+    cursor: pointer;
+}
+
+
+.contact_myinfoul>li>a {
+    margin-left: 10px;
+    color: #cfcfcf;
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.emailck{
+    width: 250px;
+    height: 27px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 27px;
+    font-weight: 700;
+    position: relative;
+    top:10px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.emailyes {
+    background-color: rgba(149, 202, 137, 0.329);
+    color:rgb(34, 107, 30);
+}
+
+.emailno{
+    background-color: #ff000054;
+    color:rgb(146, 0, 0);
+}

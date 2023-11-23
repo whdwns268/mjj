@@ -39,7 +39,7 @@ return(
     </div>
 
     <div>
-        <button type='button'><Link to='/portfolio'>More Portfolio →</Link> </button>
+        <button type='button'><Link to='/portfolio' style={{color:"white"}}>More Portfolio →</Link> </button>
     </div>
     <div className={moduleStyle.slaycssContainer}>
         <div><Saly className={moduleStyle.slaycss}/></div>

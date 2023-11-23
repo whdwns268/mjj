@@ -4,6 +4,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import PageHome from './home/Pagehome'
 import Portfolio from './portfolio/Portfolio'
 import Abouts from './abouts/Abouts'
+import Contact from './contact/Contact'
 import "./Transition.css";
 
 const Transition = () => {
@@ -18,7 +19,7 @@ const Transition = () => {
                     <Route path="/home" element={<PageHome style={{ position: 'absolute' }}/>} />
                     <Route path="/about" element={<Abouts style={{ position: 'absolute' }}/>} />
                     <Route path="/portfolio" element={<Portfolio style={{ position: 'absolute' }}/>} />
-                    <Route path="/contact" element={<PageHome style={{ position: 'absolute' }}/>} />
+                    <Route path="/contact" element={<Contact style={{ position: 'absolute' }}/>} />
                 </Routes>
             </CSSTransition>
         </TransitionGroup>

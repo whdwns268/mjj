@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.083e80ab.css",
+    "main.js": "/static/js/main.c7ad6c9e.js",
+    "static/js/787.adc00f0e.chunk.js": "/static/js/787.adc00f0e.chunk.js",
+    "static/media/Saly13.svg": "/static/media/Saly13.ebbba715324f34c087f64974caec962d.svg",
+    "static/media/portfolio_img_1.png": "/static/media/portfolio_img_1.d6d1339e766a0aa26426.png",
+    "static/media/portfolio_img_5.png": "/static/media/portfolio_img_5.1b36e0a8b332801e38ce.png",
+    "static/media/portfolio_img_2.png": "/static/media/portfolio_img_2.035eee3e66685a6a2532.png",
+    "static/media/portfolio_img_3.png": "/static/media/portfolio_img_3.ceddfd6e3e3fc18029a4.png",
+    "static/media/portfolio_img_4.png": "/static/media/portfolio_img_4.16973680f9fc0eb6db69.png",
+    "static/media/aws.png": "/static/media/aws.7cfb1f5c177359a0bd66.png",
+    "static/media/SuperToroid-Yellow-Glossy.png": "/static/media/SuperToroid-Yellow-Glossy.688401a752a4ab90922f.png",
+    "static/media/Pill-Blue-Glossy.png": "/static/media/Pill-Blue-Glossy.40d50ecac063e7262ced.png",
+    "static/media/phone.svg": "/static/media/phone.68deb1ed4b60eef98c1b.svg",
+    "static/media/tistory.svg": "/static/media/tistory.708d0f84272f6387ccd3.svg",
+    "static/media/git.svg": "/static/media/git.056ddb7b4d91ab3c958b.svg",
+    "static/media/GitHub-Mark.svg": "/static/media/GitHub-Mark.04be58c17b3d5e974442.svg",
+    "static/media/clickicon.svg": "/static/media/clickicon.b706e423d06358f8af2c.svg",
+    "static/media/filled.svg": "/static/media/filled.5ffd08080a8151d89227.svg",
+    "index.html": "/index.html",
+    "main.083e80ab.css.map": "/static/css/main.083e80ab.css.map",
+    "main.c7ad6c9e.js.map": "/static/js/main.c7ad6c9e.js.map",
+    "787.adc00f0e.chunk.js.map": "/static/js/787.adc00f0e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.083e80ab.css",
+    "static/js/main.c7ad6c9e.js"
+  ]
+}
