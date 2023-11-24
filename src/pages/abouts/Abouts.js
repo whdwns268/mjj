@@ -85,6 +85,7 @@ function Abouts() {
       </div>
 
       <div className={moduleStyle.divbox_slidebox}>
+
         <ul id="silderskil" ref={ulRef} className={`${moduleStyle.slidebox_ul} ${isPaused ? moduleStyle.paused : moduleStyle.pausedok}`}>
           {/* 첫번째 */}
           {skills.map((skills, index) => (
@@ -102,8 +103,11 @@ function Abouts() {
               </div>
 
               <div>{skills.details[3]}</div>
+              <div/>{/* 쌍따움표이미지 */}
             </li>
           ))}
+
+
           {skills.map((skills, index) => (
             <li
               key={index}
@@ -120,6 +124,7 @@ function Abouts() {
               </div>
 
               <div>{skills.details[3]}</div>
+               <div/>{/* 쌍따움표이미지 */}
             </li>
           ))}
 

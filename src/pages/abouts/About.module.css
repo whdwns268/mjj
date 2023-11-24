@@ -154,6 +154,17 @@
     text-align: left;
 }
 
+.slidebox_li>div:nth-of-type(4) {
+    position: absolute;
+    width: 93px;
+    height: 81px;
+    background-image: url(/public/img/quotationmark.png);
+    top: 0%;
+    margin-top : 15px;
+    right: 0%;
+    margin-right:15px;
+}
+
 .paused {
     animation-play-state: paused;
 }

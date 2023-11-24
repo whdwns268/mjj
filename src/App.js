@@ -8,7 +8,6 @@ import useGeoLocation from './useGeolocation.tsx';
 import { Routes, Route } from "react-router-dom";
 import Transition from './pages/Transition'
 import Nav from './Nav.js'
-
 import pillImage from './ico/Pill-Blue-Glossy.png';
 import superToroid from './ico/SuperToroid-Yellow-Glossy.png';
 import roundCube from './ico/RoundCube-Orange-Glossy.png';
