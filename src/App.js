@@ -15,7 +15,8 @@ function App() {
 
   const location = useGeoLocation();
   const [isMenupage,setMenupage] = useState(window.innerWidth < 768);
-  console.log(isMenupage);
+  const [isNavbar, setNavbar] = useState(false);
+  console.log(isNavbar);
 
   useEffect(() => {
     const handleResize = () => {
@@ -27,10 +28,11 @@ function App() {
     return () => {
         window.removeEventListener('resize', handleResize);
     };
+
 }, []);
 
   function Moblie_nav_close(){
-    setMenupage(!isMenupage);
+    setNavbar(!isNavbar);
   }
   
   return (
@@ -43,16 +45,16 @@ function App() {
         <div className="App-setting2">{/* 박스툴*/}
           <div>{/* 박스내용물 시작*/}
             {/* nav바 컨트롤*/}
-            <Nav setMenupage={setMenupage}/>
+            <Nav setMenupage={setMenupage} setNavbar={setNavbar}/>
             {/* 실제 보여지는 페이지 부분*/}
             <div className='css_pages'>
               <Transition />
             </div>
           </div>
         </div>
-            <span className={`mobileMenu ${isMenupage ? "mobileMenuAni" : ""}`}>
+            <span className={`mobileMenu ${isNavbar ? "mobileMenuAni" : ""}`}>
                 <ul id="mobilenavbtn_move">
-                    <li onClick={Moblie_nav_close}><Link to='/home' isMenupage={isMenupage}>Home</Link></li>
+                    <li onClick={Moblie_nav_close}><Link to='/home' >Home</Link></li>
                     <li onClick={Moblie_nav_close}><Link to='/about'>About</Link></li>
                     <li onClick={Moblie_nav_close}><Link to='/portfolio'>Portfolio</Link></li>
                     <li onClick={Moblie_nav_close}><Link to='/contact'>Contact</Link></li>

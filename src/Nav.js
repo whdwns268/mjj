@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import React, { useState, useEffect, useRef } from 'react';
 import { ReactComponent as Menubar } from './img/menu_FILL.svg';
 
-function Nav({setMenupage}) {
+function Nav({setMenupage , setNavbar}) {
 
     //모바일일 경우 768이하
     const isMobile = window.innerWidth < 768;
@@ -48,7 +48,7 @@ function Nav({setMenupage}) {
     }, [location]);
 
     function menubtnclick(){
-        setMenupage(true);
+        setNavbar(true);
     }
 
     return (
