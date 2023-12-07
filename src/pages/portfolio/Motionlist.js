@@ -7,9 +7,11 @@ import Img3 from '../../img/portfolio_img_3.png'
 import Img4 from '../../img/portfolio_img_4.png'
 import Img5 from '../../img/portfolio_img_5.png'
 import portfoliojson from './portfoliojson'
-
+import useMobileSizeCheck from '../../useMobileSizeCheck.js'
 
 function Motionlist({ pofolnum, updatePofolnum }) {
+
+    const isMobileSize = useMobileSizeCheck();
 
     const ulElement = useRef(null);
 
@@ -56,8 +58,10 @@ function Motionlist({ pofolnum, updatePofolnum }) {
         setTimeout(() => {
             ulElementCurrent.removeChild(liElements[0]); // 변경된 부분
             ulElementCurrent.append(clonedLi); // 변경된 부분
+            if(!isMobileSize){
             liElements[0].style.width = "660px";
             liElements[0].style.height = "385px";
+            }
             clickicoEnter()
             directlinkEnter()
             updatePofolnum(pofolnum => pofolnum === 5 ? 1 : pofolnum + 1); // 상태 업데이트

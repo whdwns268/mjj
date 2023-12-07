@@ -127,7 +127,6 @@
 
 .contact_divbox>span:nth-of-type(2) {
     width: 440px;
-
 }
 
 .contact_myinfoul {
@@ -206,4 +205,34 @@
 .emailno{
     background-color: #ff000054;
     color:rgb(146, 0, 0);
+}
+
+@media screen and (max-width: 768px) {
+
+    .contact {
+        margin-top:5%;
+    }
+    .contact_divbox {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: none;
+    }
+
+    .contact_myinfoul {
+        width: auto;
+        height: auto;
+        margin-top:5%;
+    }
+
+    .contact_divbox>div:nth-of-type(2) {
+        font-size: 30px;
+    }
+
+    .contact_myinfoul>li{
+        justify-content: center;
+    }
+
 }

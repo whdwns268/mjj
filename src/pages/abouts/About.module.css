@@ -172,3 +172,74 @@
 .pausedok {
     animation: slideIn 50s linear infinite;
 }
+
+
+@media screen and (max-width: 768px) {
+
+    .divbox_textbox{
+        width: 100%;
+        height: 60%;
+    }
+    
+    .divbox_textbox > span {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .divbox_textbox > span:nth-of-type(1) {
+        top:0;
+        width: 100%;
+        height: 35%;
+    }
+
+    .divbox_textbox > span:nth-of-type(1) > a {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .divbox_textbox > span:nth-of-type(1) > a:nth-of-type(1){
+        margin-bottom: 2%;
+    }
+
+    .divbox_textbox > span:nth-of-type(1) > a:nth-of-type(1) {
+        font-size: 1.7rem;
+    }
+
+    .divbox_textbox > span:nth-of-type(2) {
+        width: 100%;
+        height: 0%;
+    }
+
+    .divbox_textbox > span:nth-of-type(3) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.20);
+        border-radius: 12px;
+        align-items: center
+    }
+
+    .divbox_textbox > span:nth-of-type(3){
+        height: 50%;
+    }
+
+    .divbox_textbox > span:nth-of-type(3) > a{
+        height: 30%;
+    }
+
+    .textbox_skilimgul {
+        height: 120px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top:-10%;
+    }
+
+    .divbox_slidebox {
+        height: 40%;
+    }
+
+    .slidebox_ul {
+        margin-top:-7%;
+    }
+
+}

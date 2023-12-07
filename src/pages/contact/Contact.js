@@ -1,8 +1,11 @@
 import React, { useEffect , useState } from "react";
 import moduleStyle from "./Contact.module.css"
 import emailjs from 'emailjs-com';
+import useMobileSizeCheck from '../../useMobileSizeCheck.js'
 
 function Contact() {
+
+    const isMobileSize = useMobileSizeCheck();
 
     const [email, setEmail] = useState(""); // 이메일 값을 상태로 관리
     const [isValidEmail, setIsValidEmail] = useState(true); // 유효성 상태를 상태로 관리
@@ -12,15 +15,22 @@ function Contact() {
         setTimeout(() => {
             const contact = document.getElementById("contact");
             contact.style.opacity = 1;
+            if(isMobileSize){
+            contact.style.left = "65px";
+            }else{
             contact.style.left = "0px";
-
+            }
             
         }, 500);
 
         setTimeout(() => {
             const watching = document.getElementById("watching");
             watching.style.opacity = 1;
+            if(isMobileSize){
+            watching.style.left = "-120px";
+            }else{
             watching.style.left = "150px";
+            }
         }, 700);
     }, [])
 
@@ -97,7 +107,13 @@ function Contact() {
                         <li><div /><img /><a>https://bruss0823.tistory.com</a></li>
                     </ul>
                 </span>
+                {isMobileSize
+                ?
+                <div id="watching">Thank You for<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;watching</div>
+                :
                 <div id="watching">Thank You for watching</div>
+                }
+                
             </div>
             </form>
         </div>

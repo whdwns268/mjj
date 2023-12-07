@@ -1,9 +1,12 @@
 import moduleStyle from './Home.module.css';
 import { ReactComponent as Saly} from '../../ico/Saly13.svg'
 import { Link } from "react-router-dom";
+import useMobileSizeCheck from '../../useMobileSizeCheck.js'
 
 
 function Pagehome(){
+
+    const isMobileSize = useMobileSizeCheck();
 
 // 스타일 함수 정의
 const linkStyle_pink = {
@@ -32,11 +35,19 @@ return(
         </span>
     </div>
 
+    {isMobileSize ?
+    <div>
+    끊임없는 학습을 통해 인터페이스와 경험을<br/>기술적으로 정확하게 구현하도록 노력합니다.<br/>
+    새로운 기술을 배우는 것을 좋아하는 저에게 있어<br/>
+    성장할 수 있는 최고의 분야라고 생각합니다
+    </div>
+    :
     <div>
     끊임없는 학습을 통해 사용자 인터페이스와 경험을 기술적으로 정확하게 구현할 수 있도록 노력합니다.<br/>
     새로운 기술을 배우고 익히는 것을 좋아하는 저에게 있어<br/>
     역량을 발휘하며 성장할 수 있는 최고의 분야라고 생각합니다
     </div>
+    }
 
     <div>
         <Link to='/portfolio'><button type='button'>More Portfolio →</button></Link> 

@@ -1,7 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 import React, { useState, useEffect, useRef } from 'react';
+import { ReactComponent as Menubar } from './img/menu_FILL.svg';
 
-function Nav() {
+function Nav({setMenupage}) {
+
+    //모바일일 경우 768이하
+    const isMobile = window.innerWidth < 768;
+    console.log(window.innerWidth);
+
     const slide_ulRef = useRef(null);
     const sliderRef = useRef(null);
     const [activeLink, setActiveLink] = useState(0);
@@ -41,9 +47,17 @@ function Nav() {
         }
     }, [location]);
 
+    function menubtnclick(){
+        setMenupage(true);
+    }
+
     return (
         <nav className="css_nav">
             <div>Jun!</div>
+            {isMobile 
+            ?
+            <span className="css_nav_mob_Menubtn" onClick={menubtnclick}><Menubar/></span>
+            :
             <ul className="css_nav_ul" ref={slide_ulRef}>
                 <li className={activeLink === 0 ? 'active' : ''}><Link to='/home'>Home</Link></li>
                 <li className={activeLink === 1 ? 'active' : ''}><Link to='/about'>About</Link></li>
@@ -51,6 +65,7 @@ function Nav() {
                 <li className={activeLink === 3 ? 'active' : ''}><Link to='/contact'>Contact</Link></li>
                 <div ref={sliderRef} className='slider_line'></div>
             </ul>
+            }
             <div></div>
         </nav>
     );

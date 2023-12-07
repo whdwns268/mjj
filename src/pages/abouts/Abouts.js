@@ -2,8 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import moduleStyle from './About.module.css';
 import skills from './skills'
 import imgpnf from '../../img/js.png'
+import useMobileSizeCheck from '../../useMobileSizeCheck.js'
 
 function Abouts() {
+
+  const isMobileSize = useMobileSizeCheck();
+
   const [isPaused, setIsPaused] = useState(false);
   const [selectedImage, setSelectedImage] = useState();
   const [isskilimgEnter, setSkilimgEnter] = useState(false);
@@ -54,9 +58,22 @@ function Abouts() {
       <div className={moduleStyle.divbox_textbox}>
         <span>
           <a>코드와 함께할 때 </a>
+
+          {isMobileSize ?
+          <a>더할 나위 없는 행복함을 느끼는 만큼,<br />지금보다 더 잘할 수 있다는 마음을 가지고<br/> 개발자를 꿈꾸고  있습니다.</a>
+          :
           <a>더할 나위 없는 행복함을 느끼는 만큼,<br />지금보다 더 잘할 수 있다는 마음을 가지고 개발자를 꿈꾸고  있습니다.</a>
+          }
+          
         </span>
-        <span><a>계속해서 변화에 맞춰 지금처럼 새로운 방식에 도전하는 것을 즐기는 프론트엔드 개발자가 되겠습니다.</a></span>
+
+        <span>
+          {isMobileSize ?
+          <a></a>
+          :
+          <a>계속해서 변화에 맞춰 지금처럼 새로운 방식에 도전하는 것을 즐기는 프론트엔드 개발자가 되겠습니다.</a>
+          }
+          </span>
         <span>
           <a>MY Stack</a>
           <ul className={moduleStyle.textbox_skilimgul}>
@@ -103,7 +120,7 @@ function Abouts() {
               </div>
 
               <div>{skills.details[3]}</div>
-              <div/>{/* 쌍따움표이미지 */}
+              <div />{/* 쌍따움표이미지 */}
             </li>
           ))}
 
@@ -124,7 +141,7 @@ function Abouts() {
               </div>
 
               <div>{skills.details[3]}</div>
-               <div/>{/* 쌍따움표이미지 */}
+              <div />{/* 쌍따움표이미지 */}
             </li>
           ))}
 

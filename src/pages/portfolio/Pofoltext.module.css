@@ -54,3 +54,31 @@
     border-radius: 40px;
     margin-left:15px;
 }
+
+@media screen and (max-width: 768px) {
+    .pofol{
+        align-items: flex-start;
+    }
+
+    .pofolul{
+        height: 90%;
+        justify-content: flex-start;
+        border-radius: 12px;
+    }
+
+    .pofolul > li{
+        width: 90%;
+        text-align: center;
+    }
+
+    .pofolul > li:nth-of-type(3){
+        height: auto;
+        color:rgb(254, 254, 254);
+    }
+
+    .pofolul > li:nth-of-type(4){
+        margin-top:5%;
+        margin-bottom: 5%;
+    }
+
+}
