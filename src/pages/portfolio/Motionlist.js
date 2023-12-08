@@ -116,14 +116,29 @@ function Motionlist({ pofolnum, updatePofolnum }) {
         visible: { y: 0, opacity: 1 },
     };
 
+    function gitlinkgo(){
+        if(pofolnum == 1){
+            alert('보안상의 문제로 해당 사이트는 접속이 불가능합니다.')
+        }else{
+        window.location.href = portfoliojson[pofolnum].gitlink;
+        }
+    }
+
+    function linkgo(){
+        if(pofolnum == 1){
+            alert('보안상의 문제로 해당 사이트는 접속이 불가능합니다.')
+        }else{
+            window.location.href = portfoliojson[pofolnum].link;
+        }
+    }
 
     return (
         <div style={{ position: "relative" }}>
             <span id="directlink" className={moduleStyle.directlink}>
-                <div>
+                <div onClick={gitlinkgo}>
                     <span></span><a>깃허브 >></a>
                 </div>
-                <div>
+                <div onClick={linkgo}>
                     <span></span><a>배포링크 >></a>
                 </div>
             </span>
