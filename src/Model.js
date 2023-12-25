@@ -44,7 +44,7 @@ function Model() {
             // 컴포넌트가 unmount될 때 timeout 정리
             return () => clearTimeout(fetchDataAfterDelay);
         }
-    }, [location.loaded, location.coordinates.lat, location.coordinates.lng]);
+    }, [location.loaded]);
 
     
     useEffect(() => {
