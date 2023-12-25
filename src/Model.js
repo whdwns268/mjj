@@ -31,9 +31,8 @@ function Model() {
                         },
                     });
 
-                    response.status === 200 ? console.log('test') : console.error('날씨 정보를 가져올 수 없습니다.');
-                    console.log(response.data);
-                    setWeatherData(response.data) 
+                    response.status === 200 ? setWeatherData(response.data) : console.error('날씨 정보를 가져올 수 없습니다.');
+
                 } catch (error) {
                     console.error('날씨 정보를 가져오는 중 에러 발생:', error);
                 }
@@ -92,7 +91,6 @@ function Model() {
                     modelYRotation += modelSpeed;
 
                     document.querySelector('#text_canvas').style.left = model.rotation.y * 45 + 'px';
-                    //console.log(model.rotation.y)
                     model.rotation.y = modelYRotation;
                     model.rotation.y += 0.01;
                     renderer.render(scene, camera);

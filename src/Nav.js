@@ -6,7 +6,6 @@ function Nav({setMenupage , setNavbar}) {
 
     //모바일일 경우 768이하
     const isMobile = window.innerWidth < 768;
-    console.log(window.innerWidth);
 
     const slide_ulRef = useRef(null);
     const sliderRef = useRef(null);

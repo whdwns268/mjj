@@ -9,7 +9,6 @@ function Portfolio() {
 
     const updatePofolnum = (newPofolnum) => {
         setPofolnum(newPofolnum);
-        console.log(pofolnum);
     };
     
     return (
