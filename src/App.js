@@ -3,8 +3,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import * as THREE from "three";
 import React, { useEffect, useState } from 'react';
 import Model from './Model';
-import useGeoLocation from './useGeolocation.tsx';
-import { Link ,useLocation , Routes, Route } from "react-router-dom";
+import { Link , Routes, Route } from "react-router-dom";
 import Transition from './pages/Transition'
 import Nav from './Nav.js'
 import pillImage from './ico/Pill-Blue-Glossy.png';
@@ -13,7 +12,6 @@ import roundCube from './ico/RoundCube-Orange-Glossy.png';
 import { ReactComponent as Closebtn } from './ico/close_FILL0.svg'
 function App() {
 
-  const location = useGeoLocation();
   const [isMenupage,setMenupage] = useState(window.innerWidth < 768);
   const [isNavbar, setNavbar] = useState(false);
   console.log(isNavbar);
@@ -34,6 +32,13 @@ function App() {
   function Moblie_nav_close(){
     setNavbar(!isNavbar);
   }
+
+  setTimeout(() => {
+    const modelElement = document.querySelector('.Model_css');
+      if (modelElement) {
+        modelElement.style.display = 'block';
+      }
+  }, 2000);
   
   return (
     <div className="App">
@@ -63,9 +68,9 @@ function App() {
             </span>
       </div>
       {/* Three.js */}
-      {/* <div className="Model_css"><Model /></div> */}
+      <div className="Model_css"><Model /></div>
       <img src={roundCube} alt="roundCube" className='roundCube'/>
-      {/* {location.loaded ? JSON.stringify(location) : "Location data not yet."} */}
+      
       <div className='pillblue'><img src={pillImage} alt="Pill" /></div>
     </div>
   );

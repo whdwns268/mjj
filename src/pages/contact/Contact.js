@@ -103,8 +103,8 @@ function Contact() {
                     <ul className={moduleStyle.contact_myinfoul}>
                         <li><div /><img /><a>010.4425.6635</a></li>
                         <li><div /><img /><a>munjongjun@gmail.com</a></li>
-                        <li><div /><img /><a>https://github.com/whdwns268</a></li>
-                        <li><div /><img /><a>https://bruss0823.tistory.com</a></li>
+                        <li><div /><img /><a href="https://github.com/whdwns268">https://github.com/whdwns268</a></li>
+                        <li><div /><img /><a href="https://bruss0823.tistory.com">https://bruss0823.tistory.com</a></li>
                     </ul>
                 </span>
                 {isMobileSize

@@ -1,12 +1,54 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useLocation } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as THREE from 'three';
+import axios from 'axios';
+
+import useGeoLocation from './useGeolocation.tsx';
 
 function Model() {
-    const [isAnimating, setIsAnimating] = useState(true); // 초기에 애니메이션을 멈춰놓습니다.
 
+
+    const location = useGeoLocation();
+    const [weatherData, setWeatherData] = useState(null);
+    const [isAnimating, setIsAnimating] = useState(true); // 초기에 애니메이션을 멈춰놓습니다.
+    
+    //날씨정보 api
     useEffect(() => {
+        if (location.loaded) { // 위치 정보가 로드된 후에만 실행
+            const fetchWeatherData = async () => {
+                try {
+                    const latitude = location.coordinates.lat;
+                    const longitude = location.coordinates.lng;
+                    const apiKey = '9e0c18cc87dd269e49e9943490a2db5e';
+
+                    const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather`, {
+                        params: {
+                            lat: latitude,
+                            lon: longitude,
+                            appid: apiKey,
+                            lang: 'kr',
+                        },
+                    });
+
+                    response.status === 200 ? console.log('test') : console.error('날씨 정보를 가져올 수 없습니다.');
+                    console.log(response.data);
+                    setWeatherData(response.data) 
+                } catch (error) {
+                    console.error('날씨 정보를 가져오는 중 에러 발생:', error);
+                }
+            };
+
+            const fetchDataAfterDelay = setTimeout(fetchWeatherData, 1000);
+
+            // 컴포넌트가 unmount될 때 timeout 정리
+            return () => clearTimeout(fetchDataAfterDelay);
+        }
+    }, [location.loaded, location.coordinates.lat, location.coordinates.lng]);
+
+    
+    useEffect(() => {
+
         let animateCamera = false;
         let animationStart;
 
@@ -14,7 +56,7 @@ function Model() {
         let renderer = new THREE.WebGLRenderer({
             canvas: document.querySelector('#canvas'),
             alpha: true,
-        },[]);
+        }, []);
 
         let camera = new THREE.PerspectiveCamera(30, 1);
         camera.position.set(0, 0, 14);
@@ -48,7 +90,7 @@ function Model() {
                     model.position.x += 0.01;
 
                     modelYRotation += modelSpeed;
-                
+
                     document.querySelector('#text_canvas').style.left = model.rotation.y * 45 + 'px';
                     //console.log(model.rotation.y)
                     model.rotation.y = modelYRotation;
@@ -64,7 +106,14 @@ function Model() {
             });
 
             document.querySelector('#canvas').addEventListener('mouseout', () => {
-                document.querySelector('#textindex').innerHTML = 'ㅋㅋㅋ';
+                document.querySelector('#textindex').innerHTML = "ㅎㅎ!";
+                setTimeout(() => {
+                    if (weatherData !== null && weatherData.weather.length > 0) {
+                        document.querySelector('#textindex').innerHTML = '오늘 날씨 ' + weatherData.weather[0].description + " !";
+                    } else {
+                        document.querySelector('#textindex').innerHTML = '저 귀엽지 않나요?';
+                    }
+                }, 2000);
                 stopCameraAnimation();
             });
 
@@ -117,16 +166,12 @@ function Model() {
                     };
                 }
             }
-
-            // 말풍선부분
-
-
         });
 
-    }, [isAnimating]);
+    }, [weatherData]);
 
     return (
-        <div>
+        <div style={{display: 'block'}}>
             <canvas
                 id="canvas"
                 width={300}
@@ -170,7 +215,8 @@ function Model() {
                         width: 'auto',
                         margin: '0',
                         color: '#fff'
-                    }}>안녕하세요! 말풍선 모양입니다.</p>
+                    }}>안녕하세요!</p>
+                    {/* {location.loaded ? JSON.stringify(location) : "Location data not yet."} */}
                 </div>
             </div>
         </div>

@@ -20,6 +20,8 @@ function Nav({setMenupage , setNavbar}) {
 
         switch (path) {
             case '/':
+                pageNum = 0;
+                break;
             case '/home':
                 pageNum = 0;
                 break;
@@ -40,10 +42,11 @@ function Nav({setMenupage , setNavbar}) {
         setActiveLink(pageNum);
 
         if (slide_ulRef.current && sliderRef.current) {
-            const slideline = slide_ulRef.current.children[pageNum];
-            sliderRef.current.style.width = `${slideline.offsetWidth}px`;
-            sliderRef.current.style.left = `${slideline.offsetLeft}px`;
-            sliderRef.current.style.top = `${slideline.offsetTop + slideline.offsetHeight}px`;
+            setTimeout(() => { const slideline = slide_ulRef.current.children[pageNum];
+                sliderRef.current.style.width = `${slideline.offsetWidth}px`;
+                sliderRef.current.style.left = `${slideline.offsetLeft}px`;
+                sliderRef.current.style.top = `${slideline.offsetTop + slideline.offsetHeight}px`;
+            }, 100);
         }
     }, [location]);
 
